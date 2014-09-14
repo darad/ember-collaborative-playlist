@@ -1,23 +1,17 @@
 Cplist.Song = DS.Model.extend({
-  soundCloudId: DS.attr('number'),
-  rank:         DS.attr('number')
+  artist:      DS.attr('string'),
+  title:      DS.attr('string')
 });
 
 Cplist.Song.FIXTURES = [
   {
-    soundCloudId: 93280442,
-    rank:         1,
+    id: 1,
+    artist: "U2",
+    title:  "Vertigo"
   },
   {
-    soundCloudId: 18985170,
-    rank:         2,
-  },
-  {
-    soundCloudId: 125206899,
-    rank:         3,
-  },
-  {
-    soundCloudId: 36507883,
-    rank:         4,
-  },
+    id: 2,
+    artist: "Miles Davis",
+    title:  "Blue In Green"
+  }
 ];
