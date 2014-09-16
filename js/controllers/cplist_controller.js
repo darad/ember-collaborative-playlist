@@ -22,5 +22,14 @@ Cplist.CplistController = Ember.ArrayController.extend({
       // Save the new model
       song.save();
     }
-  }
+  },
+  
+  total:  function() {
+    return this.get('length');
+  }.property('@each'),
+  
+  inflection: function() {
+    var total = this.get('total');
+    return total === 1 ? 'song' : 'songs';
+  }.property('total')
 });
