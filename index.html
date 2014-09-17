@@ -13,11 +13,15 @@
         <span id="song-count">
           <strong>{{total}}</strong> {{inflection}} in the playlist.
         </span>
-        {{#each}}
+        {{#each itemController="song"}}
         <div>
-          <p> {{artist}} - {{title}} </p>
-          <button id="move-up">UP</button>
-          <button id="move-down">DOWN</button>
+          {{#if isEditing}}
+            <input class="edit">
+          {{else}}
+            <p {{action "editSong" on="doubleClick"}}> {{artist}} - {{title}} </p>
+            <button id="move-up">UP</button>
+            <button id="move-down">DOWN</button>
+          {{/if}}
         </div>
         {{/each}}
 
@@ -35,5 +39,6 @@
     <script src="js/router.js"></script>
     <script src="js/models/song.js"></script>
     <script src="js/controllers/cplist_controller.js"></script>
+    <script src="js/controllers/song_controller.js"></script>
   </body>
 </html>
