@@ -16,7 +16,8 @@
         {{#each itemController="song"}}
         <div>
           {{#if isEditing}}
-            <input class="edit">
+            {{edit-song class="edit" value=fullName focus-out="acceptChanges"
+                                      insert-newline="acceptChanges"}}
           {{else}}
             <p {{action "editSong" on="doubleClick"}}> {{artist}} - {{title}} </p>
             <button id="move-up">UP</button>
@@ -40,5 +41,6 @@
     <script src="js/models/song.js"></script>
     <script src="js/controllers/cplist_controller.js"></script>
     <script src="js/controllers/song_controller.js"></script>
+    <script src="js/views/edit_song_view.js"></script>
   </body>
 </html>
