@@ -22,6 +22,7 @@
             <p {{action "editSong" on="doubleClick"}}> {{artist}} - {{title}} </p>
             <button id="move-up">UP</button>
             <button id="move-down">DOWN</button>
+            <button {{action "removeSong"}} id="delete-song">DELETE</button>
           {{/if}}
         </div>
         {{/each}}
