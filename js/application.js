@@ -1,3 +1,5 @@
 window.Cplist = Ember.Application.create();
 
-Cplist.ApplicationAdapter = DS.FixtureAdapter.extend();
+Cplist.ApplicationAdapter = DS.FirebaseAdapter.extend({
+  firebase: new Firebase("https://cplaylist.firebaseio.com")
+});
